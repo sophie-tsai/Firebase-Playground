@@ -3,13 +3,25 @@ import "./firebase";
 import "./App.css";
 import Housemates from "./Housemates";
 import Authentication from "./Authentication";
+import UserProfile from "./UserProfile";
+
+import { Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <h1>housemates</h1>
+      <Link to="/Firebase-Playground" className="link-home">
+        <h1>housemates</h1>
+      </Link>
       <Authentication />
-      <Housemates />
+      <Switch>
+        <Route exact path="/Firebase-Playground">
+          <Housemates />
+        </Route>
+        <Route exact path="/profile">
+          <UserProfile />
+        </Route>
+      </Switch>
     </div>
   );
 }

@@ -13,6 +13,17 @@
   margin-right: 0.25rem;
 }
 
+.add-housemate-name {
+  border: 2px #b38d97 solid;
+
+  padding: 0.25rem;
+  outline: none;
+}
+
+.posted-by {
+  font-size: 0.8rem;
+}
+
 .post-information {
   display: flex;
   justify-content: space-between;

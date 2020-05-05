@@ -5,3 +5,14 @@
 body {
   margin: 2rem;
 }
+
+.link-home {
+  text-decoration: none;
+  color: #b38d97;
+  cursor: pointer;
+}
+
+.link-home:focus,
+.link-home:hover {
+  color: #77555b;
+}

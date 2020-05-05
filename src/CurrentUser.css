@@ -7,3 +7,14 @@ img {
 .current-user {
   display: flex;
 }
+
+.link-profile {
+  text-decoration: none;
+  cursor: pointer;
+  color: #77555b;
+}
+
+.link-profile:focus,
+.link-profile:hover {
+  color: #b38d97;
+}

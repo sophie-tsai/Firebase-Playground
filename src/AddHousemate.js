@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import houseRef from "./firebase";
 import { auth } from "./firebaseConfig";
+import { UserContext } from "./providers/UserProvider";
+import "./Housemates.css";
 
 function AddHousemate() {
   const [housemateInfo, setHousemateInfo] = useState({
     name: "",
     gender: "female",
   });
-
+  const { user } = useContext(UserContext);
   const { uid, displayName } = auth.currentUser || {};
 
   async function handleCreate(event) {
@@ -40,31 +42,36 @@ function AddHousemate() {
   };
 
   return (
-    <div className="add-housemate">
-      <input
-        type="text"
-        value={housemateInfo.name}
-        placeholder="enter name"
-        name="name"
-        onChange={handleChange}
-        onKeyUp={enterPressed}
-        required
-      />
-      <select
-        value={housemateInfo.gender}
-        onChange={handleChange}
-        name="gender"
-      >
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="non-binary">non-binary</option>
-      </select>
-      {housemateInfo.name.length !== 0 && (
-        <button type="submit" onClick={handleCreate}>
-          add roommate
-        </button>
+    <>
+      {user && (
+        <div className="add-housemate">
+          <input
+            type="text"
+            value={housemateInfo.name}
+            placeholder="enter name"
+            name="name"
+            onChange={handleChange}
+            onKeyUp={enterPressed}
+            className="add-housemate-name"
+            required
+          />
+          <select
+            value={housemateInfo.gender}
+            onChange={handleChange}
+            name="gender"
+          >
+            <option value="female">female</option>
+            <option value="male">male</option>
+            <option value="non-binary">non-binary</option>
+          </select>
+          {housemateInfo.name.length !== 0 && (
+            <button type="submit" onClick={handleCreate}>
+              add roommate
+            </button>
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 }
 

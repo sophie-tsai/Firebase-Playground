@@ -1,6 +1,6 @@
 import React from "react";
 import "./CurrentUser.css";
-
+import { Link } from "react-router-dom";
 import { signOut } from "./firebaseConfig";
 
 function CurrentUser({ displayName, photoURL }) {
@@ -10,7 +10,9 @@ function CurrentUser({ displayName, photoURL }) {
         <img src={photoURL} alt="user thumbnail" />
       </div>
       <div>
-        <h2>{displayName}</h2>
+        <Link to="/profile" className="link-profile">
+          <h2>{displayName}</h2>
+        </Link>
         <button onClick={signOut}>sign out</button>
       </div>
     </div>
