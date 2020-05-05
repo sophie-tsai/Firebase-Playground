@@ -1,0 +1,8 @@
+.user-profile-input-name {
+  border: 2px #b38d97 solid;
+  border-radius: 5px;
+  padding: 0.25rem;
+  margin: 0.5rem;
+  outline: none;
+  font-size: 0.8rem;
+}

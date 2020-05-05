@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/storage";
 
 const firebaseConfig = {
   apiKey: `${process.env.REACT_APP_API_KEY}`,
@@ -51,14 +52,16 @@ export const createUserProfileDocument = async (user, additionalData) => {
       console.error("error creating user", error.message);
     }
   }
+
   return getUserDocument(user.uid);
 };
 
 export const getUserDocument = async (uid) => {
   if (!uid) return null;
   try {
-    const userDocument = await firestore.collection("users").doc(uid).get();
-    return { uid, ...userDocument.data() };
+    return firestore.collection("users").doc(uid);
+    //.get();
+    // return { uid, ...userDocument.data() };
   } catch (error) {
     console.error("error fetching user", error.message);
   }

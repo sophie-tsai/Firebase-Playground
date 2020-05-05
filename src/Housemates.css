@@ -15,9 +15,12 @@
 
 .add-housemate-name {
   border: 2px #b38d97 solid;
-
+  border-radius: 5px;
   padding: 0.25rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
   outline: none;
+  font-size: 0.8rem;
+  min-width: 50%;
 }
 
 .posted-by {

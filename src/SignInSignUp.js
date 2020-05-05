@@ -9,12 +9,12 @@ function SignInSignUp() {
       <div className="sign-in">
         <label>
           email
-          <input type="email" />
+          <input type="email" className="sign-in-input" />
         </label>
         <br />
         <label>
           password
-          <input type="password" />
+          <input type="password" className="sign-in-input" />
         </label>
         <br />
         <button>sign in with email</button>

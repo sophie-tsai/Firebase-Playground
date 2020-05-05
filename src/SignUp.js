@@ -41,6 +41,7 @@ function SignUp() {
           name="displayName"
           value={signUpInput.displayName}
           onChange={(event) => handleChange(event)}
+          className="sign-in-input"
         />
       </label>
       <br />
@@ -51,6 +52,7 @@ function SignUp() {
           name="email"
           value={signUpInput.email}
           onChange={(event) => handleChange(event)}
+          className="sign-in-input"
         />
       </label>
       <br />
@@ -61,6 +63,7 @@ function SignUp() {
           name="password"
           value={signUpInput.password}
           onChange={(event) => handleChange(event)}
+          className="sign-in-input"
         />
       </label>
       <br />
