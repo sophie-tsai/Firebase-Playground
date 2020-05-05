@@ -1,0 +1,23 @@
+.housemate {
+  background: #b38d97;
+  color: white;
+  padding: 0.25rem;
+  margin: 0.5rem;
+  margin-left: 0;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.add-housemate {
+  width: 50%;
+  margin-right: 0.25rem;
+}
+
+.post-information {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  margin: 1rem 0;
+}
