@@ -4,8 +4,19 @@
   padding: 0.25rem;
   margin: 0.5rem;
   margin-left: 0;
-  width: 50%;
+  width: 30%;
+  min-width: 500px;
   border-radius: 5px;
+}
+
+.housemate-name-gender {
+  text-decoration: none;
+  color: white;
+}
+
+.housemate-name-gender:focus,
+.housemate-name-gender:hover {
+  color: #77555b;
 }
 
 .gender-select {
@@ -13,7 +24,8 @@
 }
 
 .add-housemate {
-  width: 50%;
+  width: 30%;
+  min-width: 500px;
   margin-right: 0.25rem;
 }
 

@@ -22,14 +22,15 @@ function UserProfile() {
     }
 
     if (imageInputRef) {
-      console.log(imageInputRef);
       if (imageInputRef.current.files[0]) {
+        console.log(imageInputRef);
         storage
           .ref()
           .child("user-profiles")
           .child(auth.currentUser.uid)
           .child(imageInputRef.current.files[0].name)
           .put(imageInputRef.current.files[0])
+          .then((imageInputRef.current.value = ""))
           .then((response) => response.ref.getDownloadURL())
           .then((photoURL) =>
             firestore
@@ -43,6 +44,7 @@ function UserProfile() {
 
   return (
     <section className="user-profile">
+      <h3>edit your user profile!</h3>
       <form onSubmit={handleSubmit}>
         <label>
           display name:

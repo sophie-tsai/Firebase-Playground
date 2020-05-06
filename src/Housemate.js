@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./Housemates.css";
 import houseRef from "./firebase";
 import { UserContext } from "./providers/UserProvider";
+import { Link } from "react-router-dom";
 
 const belongsToCurrentUser = (currentUser, postAuthor) => {
   if (!currentUser) return false;
@@ -21,9 +22,11 @@ function Housemate({ id, name, gender, user }) {
 
   return (
     <div key={id} className="housemate">
-      <h2>
-        {name}, {gender}
-      </h2>
+      <Link to={`/housemate/${id}`} className="housemate-name-gender">
+        <h2>
+          {name}, {gender}
+        </h2>
+      </Link>
       <div className="post-information">
         <span className="posted-by">posted by {user.displayName} </span>
 
