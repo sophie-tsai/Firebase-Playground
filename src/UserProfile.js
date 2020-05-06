@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { auth, firestore } from "./firebaseConfig";
+import React, { useState, useRef } from "react";
+import { auth, firestore, storage } from "./firebaseConfig";
 import "./UserProfile.css";
 
 function UserProfile() {
   const [displayName, setDisplayName] = useState("");
-  const imageInputRef = null;
+  const imageInputRef = useRef(null);
 
   const handleChange = (event) => {
     const { value } = event.target;
@@ -19,6 +19,25 @@ function UserProfile() {
         .doc(auth.currentUser.uid)
         .update({ displayName });
       setDisplayName("");
+    }
+
+    if (imageInputRef) {
+      console.log(imageInputRef);
+      if (imageInputRef.current.files[0]) {
+        storage
+          .ref()
+          .child("user-profiles")
+          .child(auth.currentUser.uid)
+          .child(imageInputRef.current.files[0].name)
+          .put(imageInputRef.current.files[0])
+          .then((response) => response.ref.getDownloadURL())
+          .then((photoURL) =>
+            firestore
+              .collection("users")
+              .doc(auth.currentUser.uid)
+              .update({ photoURL })
+          );
+      }
     }
   };
 
@@ -35,6 +54,7 @@ function UserProfile() {
             placeholder="name"
           ></input>
         </label>
+        <br />
         <label>
           <input type="file" ref={imageInputRef}></input>
         </label>

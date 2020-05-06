@@ -10,7 +10,7 @@ function AddHousemate() {
     gender: "female",
   });
   const { user } = useContext(UserContext);
-  const { uid, displayName } = auth.currentUser || {};
+  const { uid } = auth.currentUser || {};
 
   async function handleCreate(event) {
     try {
@@ -22,7 +22,7 @@ function AddHousemate() {
       await houseRef.add({
         name: housemateInfo.name,
         gender: housemateInfo.gender,
-        user: { displayName: displayName, uid: uid },
+        user: { displayName: user.displayName, uid: uid },
       });
     } catch (error) {
       alert("sign in to add a housemate");
@@ -59,13 +59,18 @@ function AddHousemate() {
             value={housemateInfo.gender}
             onChange={handleChange}
             name="gender"
+            className="gender-select"
           >
             <option value="female">female</option>
             <option value="male">male</option>
             <option value="non-binary">non-binary</option>
           </select>
           {housemateInfo.name.length !== 0 && (
-            <button type="submit" onClick={handleCreate}>
+            <button
+              type="submit"
+              onClick={handleCreate}
+              className="submit-button"
+            >
               add roommate
             </button>
           )}

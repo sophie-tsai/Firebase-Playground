@@ -10,7 +10,7 @@ const belongsToCurrentUser = (currentUser, postAuthor) => {
 
 function Housemate({ id, name, gender, user }) {
   const currentUser = useContext(UserContext);
-
+  // console.log(user);
   async function handleDelete(id) {
     houseRef
       .doc(id)
@@ -25,7 +25,7 @@ function Housemate({ id, name, gender, user }) {
         {name}, {gender}
       </h2>
       <div className="post-information">
-        <span className="posted-by">posted by {user.displayName}</span>
+        <span className="posted-by">posted by {user.displayName} </span>
 
         {belongsToCurrentUser(currentUser.user, user) && (
           <button onClick={() => handleDelete(id)}>delete</button>
