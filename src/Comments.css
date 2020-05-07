@@ -14,7 +14,27 @@
   border: 2px #b38d97 solid;
   width: 30%;
   min-width: 500px;
-  padding: 1rem 0.25rem;
+  padding: 0.25rem;
   margin-top: 0.5rem;
   border-radius: 5px;
+}
+
+.add-comment {
+  margin-bottom: 1.5rem;
+}
+
+.comment-timestamp,
+.comment-author {
+  text-align: right;
+  margin: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.comment-author {
+  font-size: 1rem;
+}
+
+.comment-body {
+  font-size: 1.25rem;
+  margin: 0;
 }

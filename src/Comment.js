@@ -1,10 +1,11 @@
 import React from "react";
 
-function Comment({ comment, createdAt }) {
-  //   console.log("comment props", props);
+function Comment({ comment, createdAt, author }) {
   return (
     <div className="comment">
-      {comment} {createdAt}
+      <p className="comment-body">{comment}</p>
+      <p className="comment-author">- {author}</p>
+      <p className="comment-timestamp"> {createdAt}</p>
     </div>
   );
 }

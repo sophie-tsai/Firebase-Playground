@@ -17,5 +17,6 @@ label {
   color: white;
   padding: 0.25rem;
   border-radius: 5px;
-  width: 50%;
+  width: 30%;
+  min-width: 500px;
 }

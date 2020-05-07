@@ -2,34 +2,34 @@ import React, { useState, useEffect } from "react";
 import Housemate from "./Housemate";
 import Comments from "./Comments";
 import { firestore } from "./firebaseConfig";
-
 import { withRouter } from "react-router-dom";
+
+import { withUser } from "./withUser";
 
 function HousematePage(props) {
   const [thisHousemate, setThisHousemate] = useState(null);
   const [comments, setComments] = useState([]);
-
   const [loaded, setLoaded] = useState(false);
 
   const housemateId = props.match.params.id;
   const housemateRef = firestore.doc(`housemates/${housemateId}`);
   const commentsRef = housemateRef.collection("comments");
 
+  console.log(props);
+  //   console.log(user);
+
   useEffect(() => {
     const unsubscribeFromPost = housemateRef.onSnapshot((snapshot) => {
-      //   const housemate = collectIdsAndData(snapshot);
-      //   console.log("housemate", housemate);
       const gatherInfo = (doc) => {
         const data = doc.data();
 
         return {
           id: doc.id,
-          name: data.name,
-          gender: data.gender,
-          user: { displayName: data.user.displayName, uid: data.user.uid },
+          ...data,
         };
       };
       const housemateInfo = gatherInfo(snapshot);
+
       //   console.log(housemateInfo);
       setThisHousemate(housemateInfo);
       setLoaded(true);
@@ -38,18 +38,13 @@ function HousematePage(props) {
     const unsubscribeFromComments = commentsRef.onSnapshot((snapshot) => {
       const commentsArray = snapshot.docs.map((doc) => {
         const data = doc.data();
-        const createdAt = new Date();
 
         return {
           id: doc.id,
-          comment: data.comment,
-          //   createdAt: Date.parse(createdAt),
+          ...data,
         };
       });
-
-      //   const comments = gatherComments(snapshot);
-      //   const comments = snapshot.docs.map(collectIdsAndData);
-      //   console.log(comments);
+      //   console.log(commentsArray);
       setComments(commentsArray);
     });
 
@@ -60,21 +55,21 @@ function HousematePage(props) {
   }, []);
 
   const createComment = (comment) => {
+    const { user } = props;
+    const createdAt = new Date();
     commentsRef.add({
       comment,
+      createdAt: createdAt.toDateString(),
+      author: user.user.displayName,
     });
   };
 
   return (
     <section>
-      {thisHousemate && <Housemate {...thisHousemate} />}
-      <Comments
-        comments={comments}
-        // housemateId={thisHousemate.id}
-        onCreate={createComment}
-      />
+      {thisHousemate && loaded && <Housemate {...thisHousemate} />}
+      <Comments comments={comments} onCreate={createComment} />
     </section>
   );
 }
 
-export default withRouter(HousematePage);
+export default withRouter(withUser(HousematePage));

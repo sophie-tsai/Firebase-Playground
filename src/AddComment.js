@@ -16,7 +16,7 @@ function AddComment({ onCreate }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="add-comment">
       <textarea
         className="textarea-add-comment"
         placeholder="enter your comment here"
