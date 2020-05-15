@@ -1,7 +1,7 @@
 import React from "react";
 import "./CurrentUser.css";
 import { Link } from "react-router-dom";
-import { signOut } from "./firebaseConfig";
+import { signOut } from "../../firebaseConfig";
 
 function CurrentUser({ displayName, photoURL }) {
   return (

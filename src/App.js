@@ -1,10 +1,10 @@
 import React from "react";
 import "./firebase";
 import "./App.css";
-import Housemates from "./Housemates";
-import HousematePage from "./HousematePage";
-import Authentication from "./Authentication";
-import UserProfile from "./UserProfile";
+import Housemates from "./components/Housemates/Housemates";
+import HousematePage from "./components/Housemates/HousematePage";
+import Authentication from "./components/Authentication/Authentication";
+import UserProfile from "./components/UserProfile/UserProfile";
 
 import { Switch, Route, Link } from "react-router-dom";
 

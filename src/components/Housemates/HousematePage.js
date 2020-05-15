@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Housemate from "./Housemate";
-import Comments from "./Comments";
-import { firestore } from "./firebaseConfig";
+import Comments from "../Comments/Comments";
+import { firestore } from "../../firebaseConfig";
 import { withRouter } from "react-router-dom";
 
-import { withUser } from "./withUser";
+import { withUser } from "../../withUser";
 
 function HousematePage(props) {
   const [thisHousemate, setThisHousemate] = useState(null);
@@ -14,9 +14,6 @@ function HousematePage(props) {
   const housemateId = props.match.params.id;
   const housemateRef = firestore.doc(`housemates/${housemateId}`);
   const commentsRef = housemateRef.collection("comments");
-
-  console.log(props);
-  //   console.log(user);
 
   useEffect(() => {
     const unsubscribeFromPost = housemateRef.onSnapshot((snapshot) => {

@@ -23,6 +23,10 @@ export const storage = firebase.storage();
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 export const signOut = () => auth.signOut();
+export const signInWithEmail = (email, password) =>
+  auth
+    .signInWithEmailAndPassword(email, password)
+    .catch((error) => console.error(error));
 
 window.firebase = firebase;
 

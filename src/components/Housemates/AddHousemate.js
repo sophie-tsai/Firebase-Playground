@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
-import houseRef from "./firebase";
-import { auth } from "./firebaseConfig";
-import { UserContext } from "./providers/UserProvider";
+import houseRef from "../../firebase";
+import { auth } from "../../firebaseConfig";
+import { UserContext } from "../../providers/UserProvider";
 import "./Housemates.css";
 
 function AddHousemate() {

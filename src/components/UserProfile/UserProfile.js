@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { auth, firestore, storage } from "./firebaseConfig";
+import { auth, firestore, storage } from "../../firebaseConfig";
 import "./UserProfile.css";
 
 function UserProfile() {

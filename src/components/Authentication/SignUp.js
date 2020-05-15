@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { auth, createUserProfileDocument } from "./firebaseConfig";
+import { auth, createUserProfileDocument } from "../../firebaseConfig";
 
 function SignUp() {
   const [signUpInput, setSignUpInput] = useState({

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import Housemate from "./Housemate";
 import "./Housemates.css";
-import { HousemateContext } from "./providers/HousemateProvider";
+import { HousemateContext } from "../../providers/HousemateProvider";
 
 import AddHousemate from "./AddHousemate";
 

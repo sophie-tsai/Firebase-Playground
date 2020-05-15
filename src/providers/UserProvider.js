@@ -6,6 +6,7 @@ const UserContext = createContext({ user: null });
 function UserProvider(props) {
   const [user, setUser] = useState(null);
   const [userLoaded, setUserLoaded] = useState(false);
+
   const { children } = props;
 
   useEffect(() => {
@@ -17,6 +18,7 @@ function UserProvider(props) {
           setUserLoaded(true);
         });
       }
+      setUserLoaded(true);
       setUser(userAuth);
     });
 
