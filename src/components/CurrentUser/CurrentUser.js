@@ -7,7 +7,11 @@ function CurrentUser({ displayName, photoURL }) {
   return (
     <div className="current-user">
       <div>
-        <img src={photoURL} alt="user thumbnail" />
+        {photoURL ? (
+          <img src={photoURL} alt="user thumbnail" />
+        ) : (
+          <img src={`${process.env.PUBLIC_URL}/default-profile.png`} />
+        )}
       </div>
       <div>
         <Link to="/profile" className="link-profile">

@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <Link to="/Firebase-Playground" className="link-home">
-        <h1>housemates</h1>
+        <h1>HomeQuarters</h1>
       </Link>
       <Authentication />
       <Switch>

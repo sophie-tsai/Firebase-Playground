@@ -1,8 +1,8 @@
 {
-  "name": "Firebase-Playground",
+  "name": "HomeQuarters",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://sophie-tsai.github.io/Firebase-Playground",
+  "homepage": "http://sophie-tsai.github.io/HomeQuarters",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

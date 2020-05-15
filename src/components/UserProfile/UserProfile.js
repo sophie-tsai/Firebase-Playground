@@ -23,7 +23,7 @@ function UserProfile() {
 
     if (imageInputRef) {
       if (imageInputRef.current.files[0]) {
-        console.log(imageInputRef);
+        // console.log(imageInputRef);
         storage
           .ref()
           .child("user-profiles")
