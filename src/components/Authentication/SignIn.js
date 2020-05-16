@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { signInWithGoogle, signInWithEmail } from "../../firebaseConfig";
-import SignUp from "./SignUp";
-import "./SignIn.css";
 
-function SignInSignUp() {
+function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,14 +14,21 @@ function SignInSignUp() {
     setPassword(value);
   }
 
+  function handleKeyUp(event) {
+    if (event.keyCode === 13) {
+      signInWithEmail(email, password);
+    }
+  }
+
   return (
-    <div>
+    <>
       <div className="sign-in">
         <label>
           email
           <input
             type="email"
             className="sign-in-input"
+            onKeyUp={handleKeyUp}
             value={email}
             onChange={handleChange}
           />
@@ -44,10 +49,8 @@ function SignInSignUp() {
         </button>
         <button onClick={signInWithGoogle}>sign in with google</button>
       </div>
-
-      <SignUp />
-    </div>
+    </>
   );
 }
 
-export default SignInSignUp;
+export default SignIn;

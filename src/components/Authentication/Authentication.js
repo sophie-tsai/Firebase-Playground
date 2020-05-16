@@ -1,15 +1,19 @@
-import React, { useContext } from "react";
-import CurrentUser from "../CurrentUser/CurrentUser";
-import { UserContext } from "../../providers/UserProvider";
-import SignInSignUp from "./SignInSignUp";
+import React, { useState } from "react";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+import "./Authentication.css";
 
 function Authentication() {
-  const { user, userLoaded } = useContext(UserContext);
-  const userInfo = user ? <CurrentUser {...user} /> : <SignInSignUp />;
-
-  // return <div>{userInfo}</div>;
-
-  return <div>{userLoaded && userInfo}</div>;
+  return (
+    <div>
+      <div className="button-auth-container">
+        <button className="button-auth">sign in</button>
+        <button className="button-auth">sign up</button>
+      </div>
+      {/* <SignIn />
+      <SignUp /> */}
+    </div>
+  );
 }
 
 export default Authentication;

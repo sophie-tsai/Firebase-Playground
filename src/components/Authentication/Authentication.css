@@ -1,0 +1,48 @@
+/* BUTTONS */
+
+.button-auth {
+  border: none;
+  border-radius: 5px;
+  margin: 0.5em;
+  font-size: 1.6rem;
+  background: var(--blue);
+  color: var(--gray);
+  font-family: "Acme", sans-serif;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 3px 3px var(--gray);
+}
+
+.button-auth-container {
+  margin: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+/* FORM */
+
+.sign-in-input {
+  margin: 0.25rem 0;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.25rem 0.5rem;
+}
+
+label {
+  margin: 0.25rem 0;
+}
+
+.email-authentication,
+.sign-in {
+  margin-bottom: 0.5rem;
+  background: #424b54;
+  color: white;
+  padding: 0.25rem;
+  border-radius: 5px;
+  width: 30%;
+  min-width: 500px;
+}

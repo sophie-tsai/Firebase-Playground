@@ -2,8 +2,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --red: #840032;
+  --red-hover: #430005;
+  --yellow: #e59500;
+  --gray: #e5dada;
+  --blue: #002642;
+}
+
 body {
-  margin: 2rem;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .link-home {
@@ -15,4 +25,9 @@ body {
 .link-home:focus,
 .link-home:hover {
   color: #77555b;
+}
+
+.title {
+  font-family: "Acme", sans-serif;
+  color: var(--blue);
 }

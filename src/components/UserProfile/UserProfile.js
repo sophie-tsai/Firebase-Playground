@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { auth, firestore, storage } from "../../firebaseConfig";
 import "./UserProfile.css";
+import { Link } from "react-router-dom";
 
 function UserProfile() {
   const [displayName, setDisplayName] = useState("");
@@ -43,26 +44,31 @@ function UserProfile() {
   };
 
   return (
-    <section className="user-profile">
-      <h3>edit your user profile!</h3>
-      <form onSubmit={handleSubmit}>
-        <label>
-          display name:
-          <input
-            type="text"
-            value={displayName}
-            className="user-profile-input-name"
-            onChange={handleChange}
-            placeholder="name"
-          ></input>
-        </label>
-        <br />
-        <label>
-          <input type="file" ref={imageInputRef}></input>
-        </label>
-        <button type="submit">submit</button>
-      </form>
-    </section>
+    <>
+      <Link to="/HomeQuarters" className="link-home">
+        <h1 className="title">HomeQuarters</h1>
+      </Link>
+      <section className="user-profile">
+        <h3>edit your user profile!</h3>
+        <form onSubmit={handleSubmit}>
+          <label>
+            display name:
+            <input
+              type="text"
+              value={displayName}
+              className="user-profile-input-name"
+              onChange={handleChange}
+              placeholder="name"
+            ></input>
+          </label>
+          <br />
+          <label>
+            <input type="file" ref={imageInputRef}></input>
+          </label>
+          <button type="submit">submit</button>
+        </form>
+      </section>
+    </>
   );
 }
 

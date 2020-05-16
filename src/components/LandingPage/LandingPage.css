@@ -1,0 +1,24 @@
+/* TYPOGRAPHY */
+
+.landing-page {
+  background: var(--gray);
+  height: 100vh;
+  padding: 11em;
+}
+
+.title-landing-page,
+.subtitle-landing-page {
+  font-family: "Acme", sans-serif;
+  color: var(--blue);
+  text-shadow: 3px 3px var(--gray);
+  text-align: center;
+}
+
+.title-landing-page {
+  font-size: 6rem;
+  margin: 0.2em;
+}
+
+.subtitle-landing-page {
+  font-size: 2rem;
+}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Housemate from "./Housemate";
 import Comments from "../Comments/Comments";
 import { firestore } from "../../firebaseConfig";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 import { withUser } from "../../withUser";
 
@@ -62,10 +62,15 @@ function HousematePage(props) {
   };
 
   return (
-    <section>
-      {thisHousemate && loaded && <Housemate {...thisHousemate} />}
-      <Comments comments={comments} onCreate={createComment} />
-    </section>
+    <>
+      <Link to="/HomeQuarters" className="link-home">
+        <h1 className="title">HomeQuarters</h1>
+      </Link>
+      <section>
+        {thisHousemate && loaded && <Housemate {...thisHousemate} />}
+        <Comments comments={comments} onCreate={createComment} />
+      </section>
+    </>
   );
 }
 
