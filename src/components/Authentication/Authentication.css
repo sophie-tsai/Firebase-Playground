@@ -1,3 +1,13 @@
+/* TYPOGRAPHY */
+
+.link-to-sign-in,
+.link-to-sign-in:visited {
+  text-decoration: none;
+  color: var(--blue);
+  margin-top: 4em;
+  text-align: center;
+}
+
 /* BUTTONS */
 .button {
   outline: none;
@@ -25,7 +35,8 @@
 }
 
 .button-google-sign-in,
-.button-email-sign-in {
+.button-email-sign-in,
+.button-email-sign-up {
   background-color: var(--red);
   color: var(--gray);
   font-size: 1rem;

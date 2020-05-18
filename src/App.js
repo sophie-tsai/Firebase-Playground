@@ -62,7 +62,7 @@ function App() {
         </Route>
 
         <Route exact path="/Homequarters/auth">
-          <Authentication authType={authType} />
+          <Authentication authType={authType} setAuthType={setAuthType} />
         </Route>
       </Switch>
       <Signature />

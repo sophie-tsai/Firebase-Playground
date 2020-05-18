@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 function LandingPage(props) {
   const { setAuthType } = props;
 
-  const handleClick = (method) => {
-    setAuthType(method);
+  const handleClick = (signUpMethod) => {
+    setAuthType(signUpMethod);
   };
 
   return (

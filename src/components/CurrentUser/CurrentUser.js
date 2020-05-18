@@ -10,7 +10,10 @@ function CurrentUser({ displayName, photoURL }) {
         {photoURL ? (
           <img src={photoURL} alt="user thumbnail" />
         ) : (
-          <img src={`${process.env.PUBLIC_URL}/default-profile.png`} />
+          <img
+            src={`${process.env.PUBLIC_URL}/default-profile.png`}
+            alt="default"
+          />
         )}
       </div>
       <div>

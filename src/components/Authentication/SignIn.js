@@ -28,17 +28,15 @@ function SignIn() {
         onKeyUp={handleKeyUp}
         value={email}
         onChange={handleChange}
-        placeholder="enter your email"
+        placeholder="email"
       />
-
-      <br />
 
       <input
         type="password"
         className="sign-in-input"
         value={password}
         onChange={handleChange}
-        placeholder="enter your password"
+        placeholder="password"
       />
 
       <div className="button-sign-in-container">
