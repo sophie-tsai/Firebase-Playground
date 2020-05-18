@@ -21,35 +21,41 @@ function SignIn() {
   }
 
   return (
-    <>
-      <div className="sign-in">
-        <label>
-          email
-          <input
-            type="email"
-            className="sign-in-input"
-            onKeyUp={handleKeyUp}
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          password
-          <input
-            type="password"
-            className="sign-in-input"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <button onClick={() => signInWithEmail(email, password)}>
+    <div className="sign-in">
+      <input
+        type="email"
+        className="sign-in-input"
+        onKeyUp={handleKeyUp}
+        value={email}
+        onChange={handleChange}
+        placeholder="enter your email"
+      />
+
+      <br />
+
+      <input
+        type="password"
+        className="sign-in-input"
+        value={password}
+        onChange={handleChange}
+        placeholder="enter your password"
+      />
+
+      <div className="button-sign-in-container">
+        <button
+          onClick={() => signInWithEmail(email, password)}
+          className="button button-email-sign-in"
+        >
           sign in with email
         </button>
-        <button onClick={signInWithGoogle}>sign in with google</button>
+        <button
+          className="button button-google-sign-in"
+          onClick={signInWithGoogle}
+        >
+          sign in with google
+        </button>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,3 +1,11 @@
+h3 {
+  margin: 1rem 0;
+}
+
+.housemates-page {
+  background: var(--gray);
+}
+
 .housemate {
   background: #b38d97;
   color: white;
@@ -46,8 +54,4 @@
 .post-information {
   display: flex;
   justify-content: space-between;
-}
-
-h3 {
-  margin: 1rem 0;
 }

@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import SignIn from "./SignIn";
+import React, { useRef } from "react";
+
 import SignUp from "./SignUp";
+import SignIn from "./SignIn";
 import "./Authentication.css";
 
-function Authentication() {
+function Authentication(props) {
+  const { authType } = props;
+
+  const backgroundRef = useRef(null);
+
   return (
-    <div>
-      <div className="button-auth-container">
-        <button className="button-auth">sign in</button>
-        <button className="button-auth">sign up</button>
-      </div>
-      {/* <SignIn />
-      <SignUp /> */}
+    <div className="auth-page" ref={backgroundRef}>
+      <h3 className="subtitle-landing-page">{authType}</h3>
+      {authType === "sign in" ? <SignIn /> : <SignUp />}
     </div>
   );
 }

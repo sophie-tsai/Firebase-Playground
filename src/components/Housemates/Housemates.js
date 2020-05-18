@@ -12,7 +12,7 @@ function Housemates() {
   const { user, userLoaded } = useContext(UserContext);
 
   return (
-    <div>
+    <div className="housemates-page">
       {userLoaded && <CurrentUser {...user} />}
       <AddHousemate />
 
