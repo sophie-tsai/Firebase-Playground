@@ -53,8 +53,6 @@ function App() {
   return (
     <div className="main-app-container" ref={backgroundRef}>
       <Switch>
-        {/* {isLoggedIn && <Redirect to="/home" />} */}
-
         <Route exact path="/HomeQuarters">
           <LandingPage setAuthType={setAuthType} />
         </Route>

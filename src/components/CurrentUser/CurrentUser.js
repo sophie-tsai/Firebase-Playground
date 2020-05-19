@@ -6,14 +6,21 @@ import { signOut } from "../../firebaseConfig";
 function CurrentUser({ displayName, photoURL }) {
   return (
     <div className="current-user">
-      <h1 className="title">HomeQuarters</h1>
-      <div>
+      <Link to="/home" className="link-home">
+        <h1 className="title">HomeQuarters</h1>
+      </Link>
+      <div className="current-user-actions">
+        <button className="sign-out-button" onClick={signOut}>
+          sign out
+        </button>
         {photoURL ? (
-          <img
-            className="profile-picture"
-            src={photoURL}
-            alt="user thumbnail"
-          />
+          <Link to="/profile" className="link-profile">
+            <img
+              className="profile-picture"
+              src={photoURL}
+              alt="user thumbnail"
+            />
+          </Link>
         ) : (
           <img
             className="default-profile-picture"
@@ -22,12 +29,6 @@ function CurrentUser({ displayName, photoURL }) {
           />
         )}
       </div>
-      {/* <div>
-        <Link to="/profile" className="link-profile">
-          <h2>{displayName}</h2>
-        </Link>
-        <button onClick={signOut}>sign out</button>
-      </div> */}
     </div>
   );
 }

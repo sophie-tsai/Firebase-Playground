@@ -13,13 +13,14 @@ function Housemates() {
   return (
     <>
       {userLoaded && <CurrentUser {...user} />}
+
       <div className="housemates-page">
         <div className="housemates-container">
+          <AddHousemate />
           {housemates.map((housemate) => (
             <Housemate {...housemate} key={housemate.id} />
           ))}
         </div>
-        <AddHousemate />
       </div>
     </>
   );

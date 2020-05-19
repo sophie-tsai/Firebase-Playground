@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-
+import { useHistory } from "react-router-dom";
 import { auth, createUserProfileDocument } from "../firebaseConfig";
 
 const UserContext = createContext({ user: null });
@@ -8,6 +8,7 @@ function UserProvider(props) {
   const [user, setUser] = useState(null);
   const [userLoaded, setUserLoaded] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  let history = useHistory();
 
   const { children } = props;
 
@@ -19,8 +20,11 @@ function UserProvider(props) {
           setUser({ uid: snapshot.id, ...snapshot.data() });
           setUserLoaded(true);
         });
+        history.push("/home");
+        setUserLoaded(true);
+      } else {
+        history.push("/HomeQuarters");
       }
-      setUserLoaded(true);
       setUser(userAuth);
     });
 

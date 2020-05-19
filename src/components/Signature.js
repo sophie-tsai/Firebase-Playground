@@ -11,7 +11,6 @@ function Signature({ setIsLoggedIn }) {
       >
         created by sophie tsai.
       </a>
-      {/* <button onClick={() => setIsLoggedIn((prev) => !prev)}>toggle</button> */}
     </div>
   );
 }

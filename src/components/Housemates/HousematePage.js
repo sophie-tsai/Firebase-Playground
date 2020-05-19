@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Housemate from "./Housemate";
 import Comments from "../Comments/Comments";
 import { firestore } from "../../firebaseConfig";
 import { withRouter, Link } from "react-router-dom";
-
+import CurrentUser from "../CurrentUser/CurrentUser";
 import { withUser } from "../../withUser";
+import { UserContext } from "../../providers/UserProvider";
 
 function HousematePage(props) {
   const [thisHousemate, setThisHousemate] = useState(null);
   const [comments, setComments] = useState([]);
   const [loaded, setLoaded] = useState(false);
-
+  const { userLoaded, user } = useContext(UserContext);
   const housemateId = props.match.params.id;
   const housemateRef = firestore.doc(`housemates/${housemateId}`);
   const commentsRef = housemateRef.collection("comments");
@@ -63,10 +64,8 @@ function HousematePage(props) {
 
   return (
     <>
-      <Link to="/HomeQuarters" className="link-home">
-        <h1 className="title">HomeQuarters</h1>
-      </Link>
-      <section>
+      {userLoaded && <CurrentUser {...user} />}
+      <section className="housemate-container">
         {thisHousemate && loaded && <Housemate {...thisHousemate} />}
         <Comments comments={comments} onCreate={createComment} />
       </section>
