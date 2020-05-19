@@ -1,57 +1,97 @@
+/* TYPOGRAPHY */
+
 h3 {
   margin: 1rem 0;
-}
-
-.housemates-page {
-  background: var(--gray);
-}
-
-.housemate {
-  background: #b38d97;
-  color: white;
-  padding: 0.25rem;
-  margin: 0.5rem;
-  margin-left: 0;
-  width: 30%;
-  min-width: 500px;
-  border-radius: 5px;
-}
-
-.housemate-name-gender {
-  text-decoration: none;
-  color: white;
-}
-
-.housemate-name-gender:focus,
-.housemate-name-gender:hover {
-  color: #77555b;
-}
-
-.gender-select {
-  margin-right: 0.25rem;
-}
-
-.add-housemate {
-  width: 30%;
-  min-width: 500px;
-  margin-right: 0.25rem;
-}
-
-.add-housemate-name {
-  border: 2px #b38d97 solid;
-  border-radius: 5px;
-  padding: 0.25rem;
-  margin: 0.5rem 0.5rem 0.5rem 0;
-  outline: none;
-  font-size: 0.8rem;
-  width: 100%;
 }
 
 .posted-by {
   font-size: 0.8rem;
 }
 
+.housemate-name {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.housemate-name:focus,
+.housemate-name:hover {
+  color: var(--yellow);
+}
+
+.housemate {
+  background: white;
+  color: var(--blue);
+  padding: 0.25rem;
+  width: 30%;
+  min-width: 500px;
+  border-radius: 5px;
+  margin: 0.5em auto;
+}
+
+.add-housemate {
+  width: 30%;
+  min-width: 500px;
+  margin-right: 0.25rem;
+  margin: 0 auto;
+}
+
+.add-housemate-name {
+  border: none;
+  background: var(--blue);
+  border-radius: 5px;
+
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* BUTTONS */
+
+.submit-button {
+  border: none;
+  background: var(--blue);
+  border-radius: 5px;
+  color: var(--gray);
+  font-size: 1rem;
+  padding: 0.5em 0.8em;
+
+  margin: 0 0 0 auto;
+}
+
+.submit-button:hover {
+  background: var(--red);
+  cursor: pointer;
+}
+
+.delete-button {
+  border: none;
+  border-radius: 5px;
+  color: var(--blue);
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  color: var(--red);
+}
+
+/* LAYOUT */
+
+.housemates-page {
+  /* background: var(--gray); */
+  min-height: 97vh;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
 .post-information {
   display: flex;
   justify-content: space-between;
+}
+
+.housemates-container {
+  display: flex;
+  flex-direction: column;
 }

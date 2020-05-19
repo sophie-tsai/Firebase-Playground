@@ -10,16 +10,18 @@ import AddHousemate from "./AddHousemate";
 function Housemates() {
   const housemates = useContext(HousemateContext);
   const { user, userLoaded } = useContext(UserContext);
-
   return (
-    <div className="housemates-page">
+    <>
       {userLoaded && <CurrentUser {...user} />}
-      <AddHousemate />
-
-      {housemates.map((housemate) => (
-        <Housemate {...housemate} key={housemate.id} />
-      ))}
-    </div>
+      <div className="housemates-page">
+        <div className="housemates-container">
+          {housemates.map((housemate) => (
+            <Housemate {...housemate} key={housemate.id} />
+          ))}
+        </div>
+        <AddHousemate />
+      </div>
+    </>
   );
 }
 

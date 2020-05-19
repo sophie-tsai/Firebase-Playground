@@ -1,6 +1,6 @@
 import React from "react";
 
-function Signature() {
+function Signature({ setIsLoggedIn }) {
   return (
     <div className="signature-container">
       <a
@@ -11,6 +11,7 @@ function Signature() {
       >
         created by sophie tsai.
       </a>
+      {/* <button onClick={() => setIsLoggedIn((prev) => !prev)}>toggle</button> */}
     </div>
   );
 }

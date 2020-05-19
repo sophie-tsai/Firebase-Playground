@@ -42,41 +42,32 @@ function AddHousemate() {
   };
 
   return (
-    <>
+    <div className="add-housemate-container">
       {user && (
         <div className="add-housemate">
           <input
             type="text"
             value={housemateInfo.name}
-            placeholder="enter name"
+            placeholder="add housemate"
             name="name"
             onChange={handleChange}
             onKeyUp={enterPressed}
-            className="add-housemate-name"
+            className="add-housemate-name input"
             required
           />
-          <select
-            value={housemateInfo.gender}
-            onChange={handleChange}
-            name="gender"
-            className="gender-select"
-          >
-            <option value="female">female</option>
-            <option value="male">male</option>
-            <option value="non-binary">non-binary</option>
-          </select>
+
           {housemateInfo.name.length !== 0 && (
             <button
               type="submit"
               onClick={handleCreate}
               className="submit-button"
             >
-              add roommate
+              enter
             </button>
           )}
         </div>
       )}
-    </>
+    </div>
   );
 }
 

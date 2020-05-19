@@ -6,22 +6,28 @@ import { signOut } from "../../firebaseConfig";
 function CurrentUser({ displayName, photoURL }) {
   return (
     <div className="current-user">
+      <h1 className="title">HomeQuarters</h1>
       <div>
         {photoURL ? (
-          <img src={photoURL} alt="user thumbnail" />
+          <img
+            className="profile-picture"
+            src={photoURL}
+            alt="user thumbnail"
+          />
         ) : (
           <img
+            className="default-profile-picture"
             src={`${process.env.PUBLIC_URL}/default-profile.png`}
             alt="default"
           />
         )}
       </div>
-      <div>
+      {/* <div>
         <Link to="/profile" className="link-profile">
           <h2>{displayName}</h2>
         </Link>
         <button onClick={signOut}>sign out</button>
-      </div>
+      </div> */}
     </div>
   );
 }

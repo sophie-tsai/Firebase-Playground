@@ -16,6 +16,8 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* TYPOGRAPHY */
+
 .link-home {
   text-decoration: none;
   color: #b38d97;
@@ -29,7 +31,8 @@ body {
 
 .title {
   font-family: "Acme", sans-serif;
-  color: var(--blue);
+  color: var(--gray);
+  margin: 0;
 }
 
 .signature {
@@ -38,10 +41,23 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.signature:hover {
+  text-decoration: underline;
+}
+
 .signature-container {
   text-align: center;
   font-size: 0.8rem;
 }
+
+.page-404 {
+  font-family: "Acme", sans-serif;
+  color: var(--blue);
+  text-align: center;
+  margin: 3em;
+}
+
+/* LAYOUT */
 
 .main-app-container {
   height: 100vh;

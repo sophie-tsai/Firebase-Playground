@@ -8,15 +8,12 @@ import { UserProvider } from "./providers/UserProvider";
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  // <React.StrictMode>
-  <Router>
-    <UserProvider>
-      <HousemateProvider>
+  <UserProvider>
+    <HousemateProvider>
+      <Router>
         <App />
-      </HousemateProvider>
-    </UserProvider>
-  </Router>,
-
-  // </React.StrictMode>
+      </Router>
+    </HousemateProvider>
+  </UserProvider>,
   document.getElementById("root")
 );

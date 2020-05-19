@@ -1,20 +1,27 @@
-img {
-  width: 5rem;
+.profile-picture,
+.default-profile-picture {
+  width: 2.5rem;
   object-fit: cover;
-  margin: 1rem 1rem 1rem 0;
+  margin: 0;
+  border-radius: 5px;
 }
 
 .current-user {
   display: flex;
+  background-color: var(--blue);
+  margin: 0;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.5rem;
 }
 
 .link-profile {
   text-decoration: none;
   cursor: pointer;
-  color: #77555b;
+  color: var(--blue);
 }
 
 .link-profile:focus,
 .link-profile:hover {
-  color: #b38d97;
+  color: var(--red);
 }

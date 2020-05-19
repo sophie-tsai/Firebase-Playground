@@ -8,11 +8,17 @@
   text-align: center;
 }
 
+.error-message {
+  color: var(--red);
+  text-align: center;
+}
+
 /* BUTTONS */
 .button {
   outline: none;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .button-auth {
@@ -25,6 +31,10 @@
   cursor: pointer;
   outline: none;
   box-shadow: 3px 3px var(--gray);
+}
+
+.button-auth:hover {
+  background: var(--red);
 }
 
 .button-auth-container,
@@ -46,16 +56,20 @@
 
 /* FORM */
 
-.sign-in-input {
-  margin: 0.25rem 0;
-  width: 100%;
+.input {
   border-radius: 5px;
   border: none;
-  font-size: 1.5rem;
+
   outline: none;
   padding: 0.5em;
   background: var(--blue);
   color: var(--gray);
+}
+
+.sign-in-input {
+  margin: 0.25rem 0;
+  width: 100%;
+  font-size: 1.5rem;
 }
 
 label {
@@ -74,8 +88,16 @@ label {
 
 /* LAYOUT */
 
+.hide-error {
+  display: none;
+}
+
+.show-error {
+  display: block;
+}
+
 .auth-page {
-  background: var(--gray);
+  /* background: var(--gray);  */
   height: 97vh;
   padding: 5em;
   z-index: 10;

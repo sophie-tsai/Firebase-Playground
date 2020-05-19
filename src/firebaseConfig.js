@@ -26,7 +26,8 @@ export const signOut = () => auth.signOut();
 export const signInWithEmail = (email, password) =>
   auth
     .signInWithEmailAndPassword(email, password)
-    .catch((error) => console.error(error));
+    .then("success!")
+    .catch((error) => console.log(error));
 
 window.firebase = firebase;
 

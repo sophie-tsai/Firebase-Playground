@@ -4,6 +4,8 @@ import { signInWithGoogle, signInWithEmail } from "../../firebaseConfig";
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("error signing in");
+  const [errorDisplay, setErrorDisplay] = useState("hide-error");
 
   function handleChange(event) {
     const { type, value } = event.target;
@@ -22,9 +24,10 @@ function SignIn() {
 
   return (
     <div className="sign-in">
+      <p className={`${errorDisplay} error-message`}>{errorMessage}</p>
       <input
         type="email"
-        className="sign-in-input"
+        className="sign-in-input input"
         onKeyUp={handleKeyUp}
         value={email}
         onChange={handleChange}
@@ -33,7 +36,7 @@ function SignIn() {
 
       <input
         type="password"
-        className="sign-in-input"
+        className="sign-in-input input"
         value={password}
         onChange={handleChange}
         placeholder="password"
@@ -46,6 +49,7 @@ function SignIn() {
         >
           sign in with email
         </button>
+
         <button
           className="button button-google-sign-in"
           onClick={signInWithGoogle}

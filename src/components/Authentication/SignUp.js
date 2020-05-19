@@ -41,7 +41,7 @@ function SignUp(props) {
         name="displayName"
         value={signUpInput.displayName}
         onChange={(event) => handleChange(event)}
-        className="sign-in-input"
+        className="sign-in-input input"
         placeholder="display name"
       />
 
@@ -50,7 +50,7 @@ function SignUp(props) {
         name="email"
         value={signUpInput.email}
         onChange={(event) => handleChange(event)}
-        className="sign-in-input"
+        className="sign-in-input input"
         placeholder="email"
       />
 
@@ -59,13 +59,18 @@ function SignUp(props) {
         name="password"
         value={signUpInput.password}
         onChange={(event) => handleChange(event)}
-        className="sign-in-input"
+        className="sign-in-input input"
         placeholder="password"
       />
       <div className="button-sign-in-container">
-        <button className="button button-email-sign-up" onClick={handleSubmit}>
-          sign up with email
-        </button>
+        <Link to="/HomeQuarters">
+          <button
+            className="button button-email-sign-up"
+            onClick={handleSubmit}
+          >
+            sign up with email
+          </button>
+        </Link>
       </div>
       <Link to="/HomeQuarters/auth">
         <p className="link-to-sign-in" onClick={() => setAuthType("sign in")}>
