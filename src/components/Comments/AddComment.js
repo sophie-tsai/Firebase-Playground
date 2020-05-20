@@ -11,8 +11,12 @@ function AddComment({ onCreate }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onCreate(commentText);
-    setCommentText("");
+    if (commentText.length > 0) {
+      onCreate(commentText);
+      setCommentText("");
+      return;
+    }
+    alert("enter a comment before submitting");
   };
 
   return (
@@ -26,7 +30,9 @@ function AddComment({ onCreate }) {
         resize="none"
       ></textarea>
       <br />
-      <button type="submit">submit</button>
+      <button type="submit" className="submit-comment-button">
+        submit
+      </button>
     </form>
   );
 }

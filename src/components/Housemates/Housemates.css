@@ -21,7 +21,7 @@ h3 {
 .housemate {
   background: white;
   color: var(--blue);
-  padding: 0.25rem;
+  padding: 0.5rem;
   width: 30%;
   min-width: 500px;
   border-radius: 5px;
@@ -52,14 +52,13 @@ h3 {
 
 /* BUTTONS */
 
-.submit-button {
+.submit-housemate-button {
   border: none;
   background: var(--blue);
   border-radius: 5px;
   color: var(--gray);
   font-size: 1rem;
   padding: 0.5em 0.9em;
-
   margin: 0 0 0 auto;
 }
 
@@ -86,7 +85,7 @@ h3 {
 .housemates-page {
   background: var(--gray);
   min-height: 97vh;
-  padding: 2rem;
+  padding: 2em;
   margin: 0 auto;
   padding-top: 0;
 }
@@ -96,12 +95,17 @@ h3 {
   justify-content: space-between;
 }
 
-.housemate-container,
-.housemates-container {
-  padding-top: 6em;
-}
-
 .housemates-container {
   display: flex;
   flex-direction: column;
+}
+
+.housemate-container {
+  min-height: 97vh;
+  padding: 2em;
+}
+
+.housemate-container,
+.housemates-container {
+  padding-top: 6em;
 }

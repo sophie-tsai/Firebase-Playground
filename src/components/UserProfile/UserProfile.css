@@ -44,18 +44,6 @@
   width: 100%;
 }
 
-/* .file-input {
-  width: 100%;
-  outline: none;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5em 0;
-  color: var(--blue);
-  margin-bottom: 0.5em;
-} */
-
 input[type="file"] {
   display: none;
 }
@@ -76,6 +64,7 @@ input[type="file"] {
 
 .submit-edit-button:hover {
   cursor: pointer;
+  background-color: var(--red);
 }
 
 .file-input-button {

@@ -58,7 +58,7 @@ function AddHousemate() {
           <button
             type="submit"
             onClick={handleCreate}
-            className="submit-button"
+            className="submit-housemate-button"
           >
             enter
           </button>
