@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext } from "react";
-import houseRef from "../firebase";
+import { houseRef } from "../firebase";
 
 const HousemateContext = createContext();
 

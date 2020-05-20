@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import houseRef from "../../firebase";
+import { houseRef } from "../../firebase";
 import { auth } from "../../firebaseConfig";
 import { UserContext } from "../../providers/UserProvider";
 import "./Housemates.css";
@@ -55,16 +55,13 @@ function AddHousemate() {
             className="add-housemate-name input"
             required
           />
-
-          {housemateInfo.name.length !== 0 && (
-            <button
-              type="submit"
-              onClick={handleCreate}
-              className="submit-button"
-            >
-              enter
-            </button>
-          )}
+          <button
+            type="submit"
+            onClick={handleCreate}
+            className="submit-button"
+          >
+            enter
+          </button>
         </div>
       )}
     </div>

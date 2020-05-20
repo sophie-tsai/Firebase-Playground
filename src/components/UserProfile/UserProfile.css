@@ -1,10 +1,132 @@
-.user-profile-input-name {
-  border: 2px #b38d97 solid;
+/* TYPOGRAPHY */
+
+.edit-user-info-header {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.delete-account {
+  color: var(--gray);
+  background: var(--red);
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+}
+
+.user-info-name {
+  font-size: 2rem;
+}
+
+/* IMAGES */
+
+.about-user-img {
+  width: 10rem;
   border-radius: 5px;
-  padding: 0.25rem;
-  margin: 0.5rem;
+  margin: 0;
+}
+
+/* FORM */
+
+.user-profile-input-name {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.5em 0;
   outline: none;
-  font-size: 0.8rem;
-  width: 20%;
-  min-width: 400px;
+  font-size: 1rem;
+  width: 65%;
+
+  color: var(--blue);
+}
+
+.user-profile-label-name {
+  padding: 0.5em 0;
+  width: 100%;
+}
+
+/* .file-input {
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em 0;
+  color: var(--blue);
+  margin-bottom: 0.5em;
+} */
+
+input[type="file"] {
+  display: none;
+}
+
+/* BUTTON */
+
+.submit-edit-button {
+  border: none;
+  background: var(--blue);
+  border-radius: 5px;
+  color: var(--gray);
+  font-size: 1rem;
+  padding: 0.5em 0.9em;
+  display: flex;
+  margin: 0 0 0 auto;
+  margin-top: 1em;
+}
+
+.submit-edit-button:hover {
+  cursor: pointer;
+}
+
+.file-input-button {
+  text-decoration: underline;
+
+  color: var(--blue);
+  border-radius: 5px;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+/* LAYOUT */
+
+.user-profile {
+  padding-top: 6em;
+  text-align: center;
+  height: 97vh;
+  width: 30%;
+  min-width: 500px;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: var(--blue);
+}
+
+.about-user {
+  background: white;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.user-info-container {
+  text-align: right;
+}
+
+.user-info-name,
+.user-info-date {
+  margin: 0;
+  margin-top: 0.2em;
+}
+
+.about-user-img-container {
+  display: flex;
+}
+
+.edit-user-info {
+  background: white;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: left;
 }

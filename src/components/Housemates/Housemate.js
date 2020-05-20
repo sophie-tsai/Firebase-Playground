@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./Housemates.css";
-import houseRef from "../../firebase";
+import { houseRef } from "../../firebase";
 import { UserContext } from "../../providers/UserProvider";
 import { Link } from "react-router-dom";
 

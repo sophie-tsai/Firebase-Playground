@@ -3,7 +3,7 @@ import "./CurrentUser.css";
 import { Link } from "react-router-dom";
 import { signOut } from "../../firebaseConfig";
 
-function CurrentUser({ displayName, photoURL }) {
+function CurrentUser({ photoURL }) {
   return (
     <div className="current-user">
       <Link to="/home" className="link-home">
@@ -13,21 +13,25 @@ function CurrentUser({ displayName, photoURL }) {
         <button className="sign-out-button" onClick={signOut}>
           sign out
         </button>
-        {photoURL ? (
-          <Link to="/profile" className="link-profile">
-            <img
-              className="profile-picture"
-              src={photoURL}
-              alt="user thumbnail"
-            />
-          </Link>
-        ) : (
-          <img
-            className="default-profile-picture"
-            src={`${process.env.PUBLIC_URL}/default-profile.png`}
-            alt="default"
-          />
-        )}
+        <div className="profile-picture-container">
+          {photoURL ? (
+            <Link to="/profile" className="link-profile">
+              <img
+                className="profile-picture"
+                src={photoURL}
+                alt="user thumbnail"
+              />
+            </Link>
+          ) : (
+            <Link to="/profile" className="link-profile">
+              <img
+                className="default-profile-picture"
+                src={`${process.env.PUBLIC_URL}/default-profile.png`}
+                alt="default"
+              />
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
