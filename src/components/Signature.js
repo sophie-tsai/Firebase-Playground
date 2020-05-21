@@ -1,6 +1,6 @@
 import React from "react";
 
-function Signature({ setIsLoggedIn }) {
+function Signature() {
   return (
     <div className="signature-container">
       <a

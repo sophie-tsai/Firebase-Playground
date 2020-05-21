@@ -15,7 +15,7 @@ function LandingPage(props) {
         <h1 className="title-landing-page">HomeQuarters</h1>
         <h2 className="subtitle-landing-page">connect with your housemates</h2>
         <div className="button-auth-container">
-          <Link to="/HomeQuarters/auth">
+          <Link to="/HomeQuarters/auth" className="link-button">
             <button
               className="button button-auth"
               onClick={() => handleClick("sign in")}

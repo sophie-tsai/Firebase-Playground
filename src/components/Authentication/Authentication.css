@@ -102,3 +102,11 @@ label {
   padding: 5em;
   z-index: 10;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 550px) {
+  .button-auth {
+    font-size: 1.2rem;
+  }
+}

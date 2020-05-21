@@ -1,5 +1,5 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
-import { auth, firestore, storage, signOut } from "../../firebaseConfig";
+import { auth, firestore, storage } from "../../firebaseConfig";
 import "./UserProfile.css";
 import { userCollectionRef } from "../../firebase";
 import { UserContext } from "../../providers/UserProvider";

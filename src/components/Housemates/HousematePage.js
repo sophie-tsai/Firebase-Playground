@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Housemate from "./Housemate";
 import Comments from "../Comments/Comments";
 import { firestore } from "../../firebaseConfig";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import CurrentUser from "../CurrentUser/CurrentUser";
 import { withUser } from "../../withUser";
 import { UserContext } from "../../providers/UserProvider";
@@ -50,7 +50,7 @@ function HousematePage(props) {
       unsubscribeFromPost();
       unsubscribeFromComments();
     };
-  }, []);
+  });
 
   const createComment = (comment) => {
     const { user } = props;
