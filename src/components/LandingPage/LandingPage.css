@@ -23,7 +23,7 @@
 }
 
 .title-landing-page {
-  font-size: calc(5rem + 0.5vw);
+  font-size: calc(5.2rem + 0.7vw);
   margin: 0.2em;
 }
 
@@ -38,5 +38,15 @@
 
   .subtitle-landing-page {
     font-size: calc(1.5rem + 1vw);
+  }
+}
+
+@media (max-width: 400px) {
+  .title-landing-page {
+    font-size: calc(3rem + 0.5vw);
+  }
+
+  .subtitle-landing-page {
+    font-size: calc(1rem + 1vw);
   }
 }
