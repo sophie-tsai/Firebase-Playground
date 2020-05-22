@@ -14,13 +14,17 @@
 }
 
 .user-info-name {
-  font-size: 2rem;
+  font-size: calc(2rem + 0.5vw);
+}
+
+.user-info-date {
+  font-size: 1rem;
 }
 
 /* IMAGES */
 
 .about-user-img {
-  width: 10rem;
+  width: 100%;
   border-radius: 5px;
   margin: 0;
 }
@@ -34,14 +38,8 @@
   margin: 0.5em 0;
   outline: none;
   font-size: 1rem;
-  width: 65%;
-
+  width: 60%;
   color: var(--blue);
-}
-
-.user-profile-label-name {
-  padding: 0.5em 0;
-  width: 100%;
 }
 
 input[type="file"] {
@@ -82,8 +80,9 @@ input[type="file"] {
   padding-top: 6em;
   text-align: center;
   height: 97vh;
-  width: 30%;
-  min-width: 500px;
+  width: 50%;
+  max-width: 550px;
+  min-width: 275px;
   border-radius: 5px;
   margin: 0 auto;
   color: var(--blue);
@@ -110,6 +109,7 @@ input[type="file"] {
 
 .about-user-img-container {
   display: flex;
+  width: 40%;
 }
 
 .edit-user-info {
@@ -118,4 +118,37 @@ input[type="file"] {
   padding: 1rem;
   margin: 1rem 0;
   text-align: left;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 750px) {
+  .user-info-name,
+  .edit-user-info-header {
+    font-size: calc(1.3rem + 0.5vw);
+  }
+
+  .user-info-date {
+    font-size: 0.9rem;
+  }
+
+  .user-profile-input-name,
+  .file-input-button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-user-img {
+    width: 6rem;
+  }
+
+  .user-info-name {
+    font-size: 1.2rem;
+  }
+
+  .delete-account,
+  .submit-edit-button {
+    font-size: 0.9rem;
+  }
 }

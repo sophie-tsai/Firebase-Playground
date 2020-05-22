@@ -11,7 +11,7 @@ function Authentication(props) {
 
   return (
     <div className="auth-page" ref={backgroundRef}>
-      <h3 className="subtitle-landing-page">{authType}</h3>
+      <h3 className="auth-page-label">{authType}</h3>
       {authType === "sign in" ? (
         <SignIn />
       ) : (

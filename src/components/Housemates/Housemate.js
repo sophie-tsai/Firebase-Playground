@@ -31,7 +31,7 @@ function Housemate({ id, name, user }) {
         )}
 
         {belongsToCurrentUser(currentUser.user, user) && (
-          <button className="delete-button" onClick={() => handleDelete(id)}>
+          <button className="move-out-button" onClick={() => handleDelete(id)}>
             move out
           </button>
         )}

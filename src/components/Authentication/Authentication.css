@@ -13,6 +13,14 @@
   text-align: center;
 }
 
+.auth-page-label {
+  font-family: "Acme", sans-serif;
+  color: var(--blue);
+  text-shadow: 3px 3px var(--gray);
+  text-align: center;
+  font-size: 2.5rem;
+}
+
 /* BUTTONS */
 .button {
   outline: none;
@@ -39,7 +47,7 @@
 
 .button-auth-container,
 .button-sign-in-container {
-  margin: 2em;
+  margin: 2em auto;
   display: flex;
   justify-content: center;
 }
@@ -81,8 +89,9 @@ label {
   color: white;
   padding: 0.25rem;
   border-radius: 5px;
-  width: 40%;
-  min-width: 500px;
+  width: 80%;
+  max-width: 500px;
+  min-width: 275px;
   margin: 1.5em auto;
 }
 
@@ -97,10 +106,9 @@ label {
 }
 
 .auth-page {
-  /* background: var(--gray);  */
   height: 97vh;
   padding: 5em;
-  z-index: 10;
+  z-index: 1;
 }
 
 /* MEDIA QUERIES */
@@ -108,5 +116,39 @@ label {
 @media (max-width: 550px) {
   .button-auth {
     font-size: 1.2rem;
+  }
+
+  .auth-page {
+    padding: 5em 1em;
+  }
+
+  .sign-in-input {
+    font-size: 1.25rem;
+  }
+
+  .auth-page-label {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .button-sign-in-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-email-sign-in {
+    margin-bottom: 0.5em;
+  }
+
+  .sign-in-input {
+    font-size: 1rem;
+  }
+
+  .button-google-sign-in,
+  .button-email-sign-in,
+  .button-email-sign-up {
+    font-size: 0.9rem;
+    min-width: 170px;
   }
 }

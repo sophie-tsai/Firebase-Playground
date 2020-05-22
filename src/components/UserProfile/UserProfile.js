@@ -89,7 +89,10 @@ function UserProfile() {
 
             <div className="user-info-container">
               <h2 className="user-info-name">{user.displayName}</h2>
-              <p className="user-info-date">member since {date}</p>
+              <p className="user-info-date">
+                member since <br />
+                {date}
+              </p>
             </div>
           </div>
         )}

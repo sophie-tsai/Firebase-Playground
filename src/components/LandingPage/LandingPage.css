@@ -19,7 +19,7 @@
 }
 
 .main-landing-page {
-  margin-top: 11em;
+  margin-top: calc(10em + 0.5vh);
 }
 
 .title-landing-page {

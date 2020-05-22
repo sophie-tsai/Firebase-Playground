@@ -5,12 +5,13 @@ h3 {
 }
 
 .posted-by {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .housemate-name {
   text-decoration: none;
   color: var(--blue);
+  font-size: 1.2rem;
 }
 
 .housemate-name:focus,
@@ -22,16 +23,17 @@ h3 {
   background: white;
   color: var(--blue);
   padding: 0.5rem;
-  width: 30%;
-  min-width: 500px;
+  width: 50%;
+  max-width: 550px;
+  min-width: 275px;
   border-radius: 5px;
   margin: 0.5em auto;
 }
 
 .add-housemate {
-  width: 30%;
-  min-width: 500px;
-
+  width: 50%;
+  max-width: 550px;
+  min-width: 275px;
   margin: 0 auto;
   color: var(--blue);
   display: flex;
@@ -67,27 +69,28 @@ h3 {
   cursor: pointer;
 }
 
-.delete-button {
+.move-out-button {
   border: none;
   border-radius: 5px;
   color: var(--blue);
+  background: white;
   outline: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
-.delete-button:hover {
+.move-out-button:hover {
   color: var(--red);
 }
 
 /* LAYOUT */
 
 .housemates-page {
-  background: var(--gray);
-  min-height: 97vh;
+  height: 97vh;
   padding: 2em;
   margin: 0 auto;
   padding-top: 0;
+  overflow: scroll;
 }
 
 .post-information {
@@ -107,5 +110,30 @@ h3 {
 
 .housemate-container,
 .housemates-container {
-  padding-top: 6em;
+  padding-top: 5.5em;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 450px) {
+  .add-housemate-name,
+  .submit-housemate-button {
+    font-size: 0.9rem;
+  }
+
+  .posted-by {
+    font-size: 0.8rem;
+  }
+
+  .move-out-button {
+    font-size: 0.8rem;
+  }
+
+  .housemate-name {
+    font-size: 1.1rem;
+  }
+
+  .housemates-page {
+    padding: 1em;
+  }
 }

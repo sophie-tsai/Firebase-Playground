@@ -4,6 +4,15 @@ import { Link } from "react-router-dom";
 import { signOut } from "../../firebaseConfig";
 
 function CurrentUser({ photoURL }) {
+  const getWindowWidth = () => {
+    const width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    console.log(width);
+    return { width };
+  };
+
   return (
     <div className="current-user">
       <Link to="/home" className="link-home">
