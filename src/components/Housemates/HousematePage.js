@@ -28,7 +28,6 @@ function HousematePage(props) {
       };
       const housemateInfo = gatherInfo(snapshot);
 
-      //   console.log(housemateInfo);
       setThisHousemate(housemateInfo);
       setLoaded(true);
     });
@@ -42,7 +41,7 @@ function HousematePage(props) {
           ...data,
         };
       });
-      //   console.log(commentsArray);
+
       setComments(commentsArray);
     });
 
@@ -50,7 +49,7 @@ function HousematePage(props) {
       unsubscribeFromPost();
       unsubscribeFromComments();
     };
-  });
+  }, []);
 
   const createComment = (comment) => {
     const { user } = props;

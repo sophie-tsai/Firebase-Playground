@@ -23,7 +23,7 @@ h3 {
   background: white;
   color: var(--blue);
   padding: 0.5rem;
-  width: 50%;
+  width: 60%;
   max-width: 550px;
   min-width: 275px;
   border-radius: 5px;
@@ -31,7 +31,7 @@ h3 {
 }
 
 .add-housemate {
-  width: 50%;
+  width: 60%;
   max-width: 550px;
   min-width: 275px;
   margin: 0 auto;

@@ -11,12 +11,12 @@ function AddComment({ onCreate }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (commentText.length > 0) {
-      onCreate(commentText);
-      setCommentText("");
+    if (commentText.length === 0) {
+      alert("enter a comment before submitting");
       return;
     }
-    alert("enter a comment before submitting");
+    onCreate(commentText);
+    setCommentText("");
   };
 
   return (
