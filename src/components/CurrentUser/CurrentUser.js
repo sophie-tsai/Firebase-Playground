@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { signOut } from "../../firebaseConfig";
 
 function CurrentUser({ photoURL }) {
-  const [width, setWidth] = useState(500);
+  const [width, setWidth] = useState(600);
 
-  const getWindowWidth = () => {
+  const setWindowWidth = () => {
     const windowWidth =
       window.innerWidth ||
       document.documentElement.clientWidth ||
@@ -16,9 +16,10 @@ function CurrentUser({ photoURL }) {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", getWindowWidth);
+    setWindowWidth();
+    window.addEventListener("resize", setWindowWidth);
 
-    return () => window.removeEventListener("resize", getWindowWidth);
+    return () => window.removeEventListener("resize", setWindowWidth);
   }, []);
 
   return (
